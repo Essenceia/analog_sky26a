@@ -1,6 +1,6 @@
 # Tiny Tapeout project information
 project:
-  title:        "Analog experiements"      # Project title
+  title:        "Digital"      # Project title
   author:       "Julia Desmazes"      # Your name
   discord:      "__essen"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  ""      # One line description of what your project does
@@ -55,7 +55,12 @@ pinout:
   uio[7]: ""
 
   # Analog pins - make sure to also set "analog_pins" above, else the pins won't be connected
-  ua[0]: ""
+  ua[0]: "ref"
+  ua[1]: ""
+  ua[2]: ""
+  ua[3]: ""
+  ua[4]: ""
+  ua[5]: ""
 
 # Do not change!
 yaml_version: 6
