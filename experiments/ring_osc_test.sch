@@ -6,15 +6,15 @@ S {}
 F {}
 E {}
 B 2 -190 -840 610 -440 {flags=graph
-y1=0
-y2=2
+y1=-0.071
+y2=1.9
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=1.0374076e-09
-x2=1.3892513e-09
+x1=1.1295038e-09
+x2=1.4813475e-09
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -29,6 +29,75 @@ logx=0
 logy=0
 rawfile=$netlist_dir/ring_osc_test.raw
 autoload=1}
+B 2 640 -840 1440 -440 {flags=graph
+y1=-0.056
+y2=1.9
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=1.1295038e-09
+x2=1.4813475e-09
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="a1
+b1
+c1"
+color="4 5 6"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
+B 2 750 -410 1550 -10 {flags=graph
+y1=-5.0152055e-06
+y2=0.00015423718
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=1.1295038e-09
+x2=1.4813475e-09
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="i(@m.xm2.msky130_fd_pr__pfet_01v8[id])
+i(@m.xm4.msky130_fd_pr__pfet_01v8[id])
+i(@m.xm6.msky130_fd_pr__pfet_01v8[id])"
+color="4 5 6"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+hcursor1_y=0.00013542336}
+B 2 750 0 1550 400 {flags=graph
+y1=5.4e-11
+y2=0.00014
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=1.1295038e-09
+x2=1.4813475e-09
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="i(@m.xm8.msky130_fd_pr__pfet_01v8[id])
+i(@m.xm10.msky130_fd_pr__pfet_01v8[id])
+i(@m.xm12.msky130_fd_pr__pfet_01v8[id])"
+color="4 5 6"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+hcursor1_y=0.000131901}
 N -240 -10 -240 30 {lab=0}
 N -240 -110 -240 -70 {lab=VDD}
 N 50 -230 50 -200 {lab=VDD}
@@ -59,6 +128,33 @@ N 580 -110 660 -110 {lab=A}
 N 660 -110 660 70 {lab=A}
 N -80 70 660 70 {lab=A}
 N -80 -100 -80 70 {lab=A}
+N 80 170 80 200 {lab=VDD}
+N 80 260 80 330 {lab=B1}
+N 80 390 80 420 {lab=0}
+N 0 230 40 230 {lab=A1}
+N 0 230 0 360 {lab=A1}
+N 0 360 40 360 {lab=A1}
+N -90 300 0 300 {lab=A1}
+N 300 170 300 200 {lab=VDD}
+N 300 260 300 330 {lab=C1}
+N 300 390 300 420 {lab=0}
+N 220 230 260 230 {lab=B1}
+N 220 230 220 360 {lab=B1}
+N 220 360 260 360 {lab=B1}
+N 540 170 540 200 {lab=VDD}
+N 540 260 540 330 {lab=A1}
+N 540 390 540 420 {lab=0}
+N 460 230 500 230 {lab=C1}
+N 460 230 460 360 {lab=C1}
+N 460 360 500 360 {lab=C1}
+N 80 170 540 170 {lab=VDD}
+N 80 290 220 290 {lab=B1}
+N 300 290 460 290 {lab=C1}
+N 540 290 610 290 {lab=A1}
+N 610 290 690 290 {lab=A1}
+N 690 290 690 470 {lab=A1}
+N -50 470 690 470 {lab=A1}
+N -50 300 -50 470 {lab=A1}
 C {sky130_fd_pr/nfet3_01v8.sym} 30 -40 0 0 {name=M1
 W=0.65
 L=0.15
@@ -170,7 +266,7 @@ C {lab_pin.sym} 360 -110 1 0 {name=p6 sig_type=std_logic lab=C
 C {code_shown.sym} -670 -230 0 0 {name=SIM only_toplevel=false value="
 .include ring_osc_test.save
 .save all
-.tran 10ps 10ns
+.tran 0.5ps 1.5ns
 .control 
 
 run
@@ -184,4 +280,108 @@ C {code_shown.sym} -670 -340 0 0 {name=lib only_toplevel=false value="
 C {launcher.sym} -440 -470 0 0 {name=h5
 descr="load waves"
 tclcommand="xschem raw_read $netlist_dir/ring_osc_test.raw tran"
+}
+C {sky130_fd_pr/nfet3_01v8.sym} 60 360 0 0 {name=M7
+W=0.52
+L=0.15
+body=GND
+nf=1
+mult=1
+ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
+pd="expr('2*int((@nf + 1)/2) * (@W / @nf + 0.29)')"
+as="expr('int((@nf + 2)/2) * @W / @nf * 0.29')"
+ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
+nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet3_01v8.sym} 60 230 0 0 {name=M8
+W=1
+L=0.15
+body=VDD
+nf=1
+mult=1
+ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
+pd="expr('2*int((@nf + 1)/2) * (@W / @nf + 0.29)')"
+as="expr('int((@nf + 2)/2) * @W / @nf * 0.29')"
+ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
+nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {gnd.sym} 80 420 0 0 {name=l5 lab=0}
+C {lab_pin.sym} -90 300 1 0 {name=p2 sig_type=std_logic lab=A1
+}
+C {sky130_fd_pr/nfet3_01v8.sym} 280 360 0 0 {name=M9
+W=0.52
+L=0.15
+body=GND
+nf=1
+mult=1
+ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
+pd="expr('2*int((@nf + 1)/2) * (@W / @nf + 0.29)')"
+as="expr('int((@nf + 2)/2) * @W / @nf * 0.29')"
+ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
+nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet3_01v8.sym} 280 230 0 0 {name=M10
+W=1
+L=0.15
+body=VDD
+nf=1
+mult=1
+ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
+pd="expr('2*int((@nf + 1)/2) * (@W / @nf + 0.29)')"
+as="expr('int((@nf + 2)/2) * @W / @nf * 0.29')"
+ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
+nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {gnd.sym} 300 420 0 0 {name=l6 lab=0}
+C {sky130_fd_pr/nfet3_01v8.sym} 520 360 0 0 {name=M11
+W=0.52
+L=0.15
+body=GND
+nf=1
+mult=1
+ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
+pd="expr('2*int((@nf + 1)/2) * (@W / @nf + 0.29)')"
+as="expr('int((@nf + 2)/2) * @W / @nf * 0.29')"
+ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
+nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet3_01v8.sym} 520 230 0 0 {name=M12
+W=1
+L=0.15
+body=VDD
+nf=1
+mult=1
+ad="expr('int((@nf + 1)/2) * @W / @nf * 0.29')"
+pd="expr('2*int((@nf + 1)/2) * (@W / @nf + 0.29)')"
+as="expr('int((@nf + 2)/2) * @W / @nf * 0.29')"
+ps="expr('2*int((@nf + 2)/2) * (@W / @nf + 0.29)')"
+nrd="expr('0.29 / @W ')" nrs="expr('0.29 / @W ')"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {gnd.sym} 540 420 0 0 {name=l7 lab=0}
+C {lab_pin.sym} 170 290 1 0 {name=p7 sig_type=std_logic lab=B1
+
+}
+C {lab_pin.sym} 390 290 1 0 {name=p8 sig_type=std_logic lab=C1
+
+
+}
+C {lab_pin.sym} 80 170 0 0 {name=p9 sig_type=std_logic lab=VDD
 }

@@ -13,8 +13,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-0.09
-x2=1.71
+x1=0.12427411
+x2=1.716799
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -34,7 +34,8 @@ logx=0
 logy=0
 rawfile=$netlist_dir/inv_sizing.raw
 autoload=1
-hilight_wave=7}
+hilight_wave=7
+sim_type=dc}
 B 2 270 -900 1960 -220 {flags=graph
 y1=1.3e-13
 y2=1.6e-05
@@ -43,8 +44,8 @@ ypos2=2
 divy=5
 subdivy=4
 unity=1
-x1=-0.09
-x2=1.71
+x1=0
+x2=1.8
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -58,7 +59,7 @@ dataset=-1
 unitx=1
 logx=0
 logy=0
-hilight_wave=1}
+hilight_wave=2}
 B 2 270 -1630 1960 -950 {flags=graph
 y1=1.8e-12
 y2=1.5e-05
@@ -67,8 +68,8 @@ ypos2=2
 divy=5
 subdivy=4
 unity=1
-x1=-0.09
-x2=1.71
+x1=0
+x2=1.8
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -82,6 +83,31 @@ unitx=1
 logx=0
 logy=0
 hilight_wave=0}
+B 2 -660 -1120 140 -720 {flags=graph
+y1=-35
+y2=-34
+ypos1=0
+ypos2=2
+divy=5
+subdivy=8
+unity=1
+x1=1000000
+x2=2e+08
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="re(out3)
+re(in)
+re(i(vin))"
+color="8 17 17"
+dataset=-1
+unitx=1
+logx=0
+logy=1
+autoload=1
+rawfile=$netlist_dir/inv_sizing_ac.raw
+sim_type=ac}
 P 4 1 -140 -410 {}
 N 20 -70 20 -40 {lab=VDD}
 N 20 20 20 90 {lab=Out}
@@ -152,11 +178,14 @@ N 780 370 790 370 {lab=Out_asym2}
 C {code_shown.sym} -770 -50 0 0 {name=SIM only_toplevel=false value="
 .include inv_sizing.save
 .save all
-.dc Vin 0.0 1.8 0.01
 .control 
 
-run
+dc Vin 0.0 1.8 0.01
 write inv_sizing.raw
+
+Vin in 0 ac 1.8
+ac dec 200 1meg 200meg
+write inv_sizing_ac.raw
 
 .endc
 "}
