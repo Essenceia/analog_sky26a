@@ -1,0 +1,12 @@
+** sch_path: /foss/designs/sym/inv_cap.sch
+**.subckt inv_cap VDD A X VSS
+*.ipin A
+*.opin X
+*.iopin VDD
+*.iopin VSS
+XM1 X A VDD VDD sky130_fd_pr__pfet_01v8_hvt L=1.0 W=2.0 nf=1 ad=0.58 as=0.58 pd=4.58 ps=4.58 nrd=0.145 nrs=0.145 sa=0 sb=0 sd=0
++ mult=1
+XM2 X A VSS GND sky130_fd_pr__nfet_01v8 L=1 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1
+XC1 X VSS sky130_fd_pr__cap_mim_m3_1 W=6 L=5 MF=1
+**.ends
+.end
