@@ -6,15 +6,18 @@ sections.
 You can also include images in this folder and reference them in the markdown. Each image must be less than
 512 kb in size, and the combined size of all images must be less than 1 MB.
 -->
+Very slow ring oscillator ananlog project, target oscialating frequency of 33MHz at 27 degrees. 
 
 ## How it works
 
-Explain how your project works
+Very slow ring oscillator output are connected to analog pins 0 and 1. 
+
 
 ## How to test
 
-Explain how to use your project
+Power up board in 1.8V and read out signal on analog pins 0 and 1. 
+
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+None
