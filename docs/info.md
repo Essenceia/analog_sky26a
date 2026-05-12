@@ -26,7 +26,7 @@ None
 
 | Errata # | Title | Impact | Affected Revisions | Fixed Revision |
 | -------- | ----- | ------ | ------------------ | -------------- |
-| 1 | VSS unconneded to ring oscillator on pin 1 | Information | 1 | 2 |
+| 1 | VSS unconneded to ring oscillator on pin 1 | Information | sky16a v1.0 | v2.0 |
 
 Impact Definition: Each erratum is marked with an impact, as defined below:
 - Minor - Workaround exists.
