@@ -39,5 +39,7 @@ changed to match the device behavior.
 #### Errata Details 
 
 **Description**: Power, driven over VSS, is unconnected to the ring oscillator connected to pin 1. 
+
 **Impacts**: No oscillating wave will be produced on pin 1. 
+
 **Workaround**: Use the oscillator on pin 0. Given both oscillators have the same target frequency this should not impact operations. 
