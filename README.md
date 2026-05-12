@@ -5,4 +5,9 @@ designed for the skywater 130nm node.
 
 ![layout](/docs/layout_render.png)
 
+See documentation and errata's in the documentation: [here](/docs/index.md) 
+
+
+This chip is part of the [Tiny Tapeout](https://tinytapeout.com/) `26a` shuttle.
+
 

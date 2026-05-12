@@ -368,7 +368,7 @@ C {devices/simulator_commands_shown.sym} -970 -480 0 0 {name=COMMAND1
 simulator=ngspice
 only_toplevel=false 
 value="
-.include slower.save
+.include ring_osc_freq_response_tb.save
 * 320 MHz : RW=1 PW=1.12 PL=0.45 NW=0.740 NL=0.45
 * 250 MHz : PW=1.12 PL=0.5 NW=0.82 NL=0.5
 * 260 MHz : PW=0.82 PL=0.5 NW=0.55 NL=0.5

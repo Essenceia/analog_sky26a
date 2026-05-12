@@ -22,11 +22,12 @@ Power up board in 1.8V and read out signal on analog pins 0.
 
 None
 
+
 ## Silicon errata
 
 | Errata # | Title | Impact | Affected Revisions | Fixed Revision |
 | -------- | ----- | ------ | ------------------ | -------------- |
-| 1 | VSS unconneded to ring oscillator on pin 1 | Information | sky16a v1.0 | v2.0 |
+| 1 | VSS unconnected to the ring oscillator wired to analog pin 1 | Information | sky26a v1.0 | v2.0 |
 
 Impact Definition: Each erratum is marked with an impact, as defined below:
 - Minor - Workaround exists.
@@ -36,10 +37,10 @@ changed to match the device behavior.
 
 ### Errata #1
 
-#### Errata Details 
+#### Errata Details
 
-**Description**: Power, driven over VSS, is unconnected to the ring oscillator connected to pin 1. 
+**Description**: Power, driven over VSS, is unconnected to the ring oscillator connected to analog pin 1.
 
-**Impacts**: No oscillating wave will be produced on pin 1. 
+**Impacts**: No oscillating wave will be produced on analog pin 1.
 
-**Workaround**: Use the oscillator on pin 0. Given both oscillators have the same target frequency this should not impact operations. 
+**Workaround**: Use the oscillator connected to analog pin 0. Given both oscillators have the same target 33Mhz oscillating frequency, so this should not impact operations.
