@@ -25,6 +25,7 @@ None
 ## Silicon errata
 
 | Errata # | Title | Impact | Affected Revisions | Fixed Revision |
+| -------- | ----- | ------ | ------------------ | -------------- |
 | 1 | VSS unconneded to ring oscillator on pin 1 | Information | 1 | 2 |
 
 Impact Definition: Each erratum is marked with an impact, as defined below:
